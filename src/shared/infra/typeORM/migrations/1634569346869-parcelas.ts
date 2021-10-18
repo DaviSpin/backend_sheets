@@ -1,0 +1,128 @@
+import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
+
+export class parcelas1634569346869 implements MigrationInterface {
+
+    public async up(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.createTable(new Table({
+            name:'parcelas',
+            columns:[
+                {
+                    name:'id',
+                    type:'int',
+                    isPrimary:true
+                },
+                {
+                    name:'nome',
+                    type:'varchar',
+                    isNullable:true
+                },
+                {
+                    name:'area',
+                    type:'decimal',
+                    precision:5,
+                    scale:3,
+                    isNullable:true
+                },
+                {
+                    name:'data_transplantio',
+                    type:'timestamp',
+                    isNullable:false
+                },
+                {
+                    name:'esp_linhas',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'vazao',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'eficiencia',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'taxa_aplicacao',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'esp_plantas',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'proj_max',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'area_ocupada',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'kl',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'agua_disponivel',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
+                    name:'qtd_max_pulso',
+                    type:'int',
+                    isNullable:true
+                },
+                {
+                    name:'qtd_min_pulso',
+                    type:'int',
+                    isNullable:true
+                },
+                {
+                    name:'duracao_media_pulso',
+                    type:'int',
+                    isNullable:true
+                },
+                {
+                    name:'transmissividade_solo',
+                    type:'boolean',
+                    default:false
+                },
+                {
+                    name:'eficiencia_irrigacao',
+                    type:'boolean',
+                    default:false
+                }
+            ]
+        }))
+
+    }
+
+    public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable('parcelas')
+    }
+
+}
