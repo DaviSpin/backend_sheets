@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
+import {MigrationInterface, QueryRunner, Table, TableColumn} from "typeorm";
 
 export class parcelas1634569346869 implements MigrationInterface {
 

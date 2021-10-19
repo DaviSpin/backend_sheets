@@ -27,6 +27,7 @@ export class reservatorios1634569364985 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable('reservatorios')
     }
 
 }
