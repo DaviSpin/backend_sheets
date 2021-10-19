@@ -1,10 +1,10 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class reservatorios1634569364985 implements MigrationInterface {
+export class kcCultivares1634569435970 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            name:'reservatorios',
+            name:'kcDAP',
             columns:[
                 {
                     name:'id',
@@ -13,20 +13,23 @@ export class reservatorios1634569364985 implements MigrationInterface {
                     isPrimary:true
                 },
                 {
-                    name:'nome',
-                    type:'varchar',
-                    isNullable:false
-                },
-                {
-                    name:'cond_agua',
-                    type:'decimal',
+                    name:'dap',
+                    type:'int',
                     isNullable:true
                 },
+                {
+                    name:'kc',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                }
             ]
         }))
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
+        await queryRunner.dropTable('kcDAP')
     }
 
 }

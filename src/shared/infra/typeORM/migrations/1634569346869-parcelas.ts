@@ -9,12 +9,13 @@ export class parcelas1634569346869 implements MigrationInterface {
                 {
                     name:'id',
                     type:'int',
-                    isPrimary:true
+                    isPrimary:true,
+                    isGenerated:true
                 },
                 {
                     name:'nome',
                     type:'varchar',
-                    isNullable:true
+                    isNullable:false
                 },
                 {
                     name:'area',
@@ -36,6 +37,13 @@ export class parcelas1634569346869 implements MigrationInterface {
                     isNullable:true
                 },
                 {
+                    name:'esp_emissores',
+                    type:'decimal',
+                    precision:5,
+                    scale:2,
+                    isNullable:true
+                },
+                {
                     name:'vazao',
                     type:'decimal',
                     precision:5,
@@ -43,7 +51,7 @@ export class parcelas1634569346869 implements MigrationInterface {
                     isNullable:true
                 },
                 {
-                    name:'eficiencia',
+                    name:'eficiencia_irrigacao',
                     type:'decimal',
                     precision:5,
                     scale:2,
@@ -64,14 +72,14 @@ export class parcelas1634569346869 implements MigrationInterface {
                     isNullable:true
                 },
                 {
-                    name:'proj_max',
+                    name:'projecao_rama_max',
                     type:'decimal',
                     precision:5,
                     scale:2,
                     isNullable:true
                 },
                 {
-                    name:'area_ocupada',
+                    name:'porcao_area',
                     type:'decimal',
                     precision:5,
                     scale:2,
@@ -85,7 +93,7 @@ export class parcelas1634569346869 implements MigrationInterface {
                     isNullable:true
                 },
                 {
-                    name:'agua_disponivel',
+                    name:'cap_agua',
                     type:'decimal',
                     precision:5,
                     scale:2,
@@ -107,12 +115,12 @@ export class parcelas1634569346869 implements MigrationInterface {
                     isNullable:true
                 },
                 {
-                    name:'transmissividade_solo',
+                    name:'com_transmissividade_solo',
                     type:'boolean',
                     default:false
                 },
                 {
-                    name:'eficiencia_irrigacao',
+                    name:'com_eficiencia_irrigacao',
                     type:'boolean',
                     default:false
                 }
