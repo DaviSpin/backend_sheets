@@ -8,9 +8,9 @@ export class fertirrigacao1634569382178 implements MigrationInterface {
             columns:[
                 {
                     name:'id',
-                    type:'int',
-                    isGenerated:true,
-                    isPrimary:true
+                    type:'binary',
+                    width:16,
+                    isPrimary:true,
                 },
                 {
                     name:'temp_avanco',

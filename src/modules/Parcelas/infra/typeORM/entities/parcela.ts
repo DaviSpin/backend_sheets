@@ -1,10 +1,11 @@
 import { IParcelas } from "modules/Parcelas/Protocols/IParcelas";
-import { Column, Entity,PrimaryGeneratedColumn } from "typeorm";
 
+import { Column, Entity,PrimaryColumn } from "typeorm";
+import {v4 as uuid4} from 'uuid'
 @Entity('parcelas')
-class Parcela implements IParcelas{
-    @PrimaryGeneratedColumn ({unsigned:true})
-    id?: number;
+export class Parcela implements IParcelas{
+    @PrimaryColumn ({type:'binary',width:16})
+    id?: string;
     @Column({nullable:false})
     nome: string;
     @Column({nullable:true})
@@ -42,9 +43,15 @@ class Parcela implements IParcelas{
     @Column({nullable:true,default:false})
     com_eficiencia_irrigacao: boolean;
     
-    id_cultivar?: number;
-    id_solo?: number;
-    id_reservatorio?: number;
+    id_cultivar?: string;
+    id_solo?: string;
+    id_reservatorio?: string;
+
+    constructor(){
+        if(!this.id){
+            this.id=uuid4()
+        }
+    }
 
 
 }

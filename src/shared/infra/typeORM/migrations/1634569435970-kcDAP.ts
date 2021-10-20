@@ -8,9 +8,9 @@ export class kcCultivares1634569435970 implements MigrationInterface {
             columns:[
                 {
                     name:'id',
-                    type:'int',
-                    isGenerated:true,
-                    isPrimary:true
+                    type:'binary',
+                    width:16,
+                    isPrimary:true,
                 },
                 {
                     name:'dap',

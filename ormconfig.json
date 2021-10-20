@@ -3,7 +3,7 @@
     "host": "localhost",
     "port": 3306,
     "username": "root",
-    "password": "1234",
+    "password": "123v312",
     "database": "test",
     "migrations":["./src/shared/infra/typeORM/migrations/*.ts"],
     "entities":["./src/modules/**/infra/typeORM/entities/*.ts"],

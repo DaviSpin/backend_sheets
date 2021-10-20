@@ -8,9 +8,9 @@ export class parcelas1634569346869 implements MigrationInterface {
             columns:[
                 {
                     name:'id',
-                    type:'int',
+                    type:'binary',
+                    width:16,
                     isPrimary:true,
-                    isGenerated:true
                 },
                 {
                     name:'nome',

@@ -5,7 +5,8 @@ export class AlterParcelasAddFk1634668847460 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn('parcelas',new TableColumn({
             name:'id_cultivar',
-            type:'int',
+            type:'binary',
+            width:16
         }))
         await queryRunner.createForeignKey('parcelas',new TableForeignKey({
             name:'FkCultivar',
@@ -17,7 +18,8 @@ export class AlterParcelasAddFk1634668847460 implements MigrationInterface {
         }))
         await queryRunner.addColumn('parcelas',new TableColumn({
             name:'id_solo',
-            type:'int',
+            type:'binary',
+            width:16
         }))
         await queryRunner.createForeignKey('parcelas',new TableForeignKey({
             name:'FkSolo',
@@ -29,7 +31,8 @@ export class AlterParcelasAddFk1634668847460 implements MigrationInterface {
         }))
         await queryRunner.addColumn('parcelas',new TableColumn({
             name:'id_reservatorio',
-            type:'int',
+            type:'binary',
+            width:16
         }))
         await queryRunner.createForeignKey('parcelas',new TableForeignKey({
             name:'FkReservatorio',

@@ -8,9 +8,9 @@ export class solos1634569521838 implements MigrationInterface {
             columns:[
                 {
                     name:'id',
-                    type:'int',
-                    isGenerated:true,
-                    isPrimary:true
+                    type:'binary',
+                    width:16,
+                    isPrimary:true,
                 },
                 {
                     name:'tipo',

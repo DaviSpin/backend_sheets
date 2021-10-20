@@ -1,5 +1,5 @@
 export interface IParcelas{
-    id?:number,
+    id?:string,
     nome:string,
     area:number,
     data_transplantio:Date,
@@ -18,7 +18,7 @@ export interface IParcelas{
     duracao_media_pulso:number,
     com_transmissividade_solo:boolean,
     com_eficiencia_irrigacao:boolean,
-    id_cultivar?:number,
-    id_solo?:number,
-    id_reservatorio?:number
+    id_cultivar?:string,
+    id_solo?:string,
+    id_reservatorio?:string
 }

@@ -8,9 +8,9 @@ export class cultivar1634569399592 implements MigrationInterface {
             columns:[
                 {
                     name:'id',
-                    type:'int',
+                    type:'binary',
+                    width:16,
                     isPrimary:true,
-                    isGenerated:true
                 },
                 {
                     name:'name',
