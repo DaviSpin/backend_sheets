@@ -2,13 +2,13 @@ import { Router } from "express";
 
 import createParcela from '../modules/Parcelas/UseCase/createParcela'
 
-const router=Router()
+const parcela=Router()
 
-router.post('/parcela',(req,resp)=>{
+parcela.post('/parcela',(req,resp)=>{
     return createParcela().handle(req,resp)
 })
-router.get('/parcelas/:id',(req,resp)=>{
+parcela.get('/parcelas/:id',(req,resp)=>{
     return resp.status(200).json({name:'test'})
 })
 
-export {router}
+export {parcela}

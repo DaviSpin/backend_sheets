@@ -1,5 +1,5 @@
 import express,{ NextFunction, Request, Response } from 'express'
-import { router } from './routes/Parcelas.routes'
+import { parcela } from './routes/Parcelas.routes'
 
 import CreateConnection from './shared/infra/typeORM'
 
@@ -11,7 +11,7 @@ const app = express()
 CreateConnection().then(db=>console.log(`Conectado ao banco ${db.driver.database}`))
 
 app.use(express.json())
-app.use(router)
+app.use(parcela)
 
 
 app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
