@@ -6,15 +6,15 @@ import {Reservatorio} from '../entities/reservatorios'
 
 export class ReservatorioRepository implements IReservatorioRepositorio{
     private repository:Repository<Reservatorio>
-    private static Repository_intance:IReservatorioRepositorio|null=null
+    private static Repository_instance:IReservatorioRepositorio|null=null
     private constructor(){
         this.repository=getRepository(Reservatorio)
     }
     static checkAndCreateRepository(){
-        if(!ReservatorioRepository.Repository_intance){
-            ReservatorioRepository.Repository_intance=new ReservatorioRepository()
+        if(!ReservatorioRepository.Repository_instance){
+            ReservatorioRepository.Repository_instance=new ReservatorioRepository()
         }
-        return ReservatorioRepository.Repository_intance
+        return ReservatorioRepository.Repository_instance
     }
     async create({ id, nome, cond_agua }: IReservatorios): Promise<IReservatorios> {
         const reservatorio=this.repository.create({
