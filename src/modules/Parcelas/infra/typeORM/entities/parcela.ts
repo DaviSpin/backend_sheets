@@ -1,6 +1,9 @@
+import { Reservatorio } from '../../../../Reservatorios/infra/typeORM/entities/reservatorios';
+import { Solos } from '../../../../Solos/infra/typeORM/entities/solo';
+import { Cultivar } from '../../../../Cultivar/infra/typeORM/entities/cultivar';
 import { IParcelas } from "modules/Parcelas/Protocols/IParcelas";
 
-import { Column, Entity,PrimaryColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity,JoinColumn,ManyToOne,PrimaryColumn, UpdateDateColumn } from "typeorm";
 import {v4 as uuid4} from 'uuid'
 @Entity('parcelas')
 export class Parcela implements IParcelas{
@@ -42,10 +45,31 @@ export class Parcela implements IParcelas{
     com_transmissividade_solo: boolean;
     @Column({nullable:true,default:false})
     com_eficiencia_irrigacao: boolean;
+
     
+    @CreateDateColumn()
+    created_at?:Date
+    @UpdateDateColumn()
+    updated_at?:Date
+    
+    @Column()
     id_cultivar?: string;
+    @Column()
     id_solo?: string;
+    @Column()
     id_reservatorio?: string;
+
+    @ManyToOne(type=>Cultivar)
+    @JoinColumn({name:"id_cultivar"})
+    cultivar:Cultivar
+
+    @ManyToOne(type=>Solos)
+    @JoinColumn({name:"id_solo"})
+    solo:Solos
+
+    @ManyToOne(type=>Reservatorio)
+    @JoinColumn({name:"id_reservatorio"})
+    reservatorio:Reservatorio
 
     constructor(){
         if(!this.id){

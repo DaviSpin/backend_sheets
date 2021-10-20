@@ -1,3 +1,6 @@
+import { Reservatorio } from './../../Reservatorios/infra/typeORM/entities/reservatorios';
+import { Solos } from '../../Solos/infra/typeORM/entities/solo';
+import { Cultivar } from './../../Cultivar/infra/typeORM/entities/cultivar';
 export interface IParcelas{
     id?:string,
     nome:string,
@@ -20,5 +23,10 @@ export interface IParcelas{
     com_eficiencia_irrigacao:boolean,
     id_cultivar?:string,
     id_solo?:string,
-    id_reservatorio?:string
+    id_reservatorio?:string,
+    created_at?:Date,
+    updated_at?:Date,
+    cultivar?:Cultivar,
+    solo?:Solos,
+    reservatorio?:Reservatorio
 }
