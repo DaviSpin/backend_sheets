@@ -8,9 +8,10 @@ export class reservatorios1634569364985 implements MigrationInterface {
             columns:[
                 {
                     name:'id',
-                    type:'binary',
-                    width:16,
+                    type:'integer',
                     isPrimary:true,
+                    isGenerated:true,
+                    generationStrategy: 'increment',
                 },
                 {
                     name:'nome',

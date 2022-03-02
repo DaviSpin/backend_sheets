@@ -2,7 +2,7 @@ import { Reservatorio } from './../../Reservatorios/infra/typeORM/entities/reser
 import { Solos } from '../../Solos/infra/typeORM/entities/solo';
 import { Cultivar } from './../../Cultivar/infra/typeORM/entities/cultivar';
 export interface IParcelas{
-    id?:string,
+    id?:number,
     nome:string,
     area:number,
     data_transplantio:Date,
@@ -21,9 +21,9 @@ export interface IParcelas{
     duracao_media_pulso:number,
     com_transmissividade_solo:boolean,
     com_eficiencia_irrigacao:boolean,
-    id_cultivar?:string,
-    id_solo?:string,
-    id_reservatorio?:string,
+    id_cultivar?:number,
+    id_solo?:number,
+    id_reservatorio?:number,
     created_at?:Date,
     updated_at?:Date,
     cultivar?:Cultivar,

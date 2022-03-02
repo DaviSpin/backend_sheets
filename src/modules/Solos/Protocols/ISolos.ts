@@ -1,5 +1,5 @@
 export interface ISolos{
-    id?:string,
+    id?:number,
     tipo:string,
     transm_solo:number,
     capacidade:number,

@@ -11,5 +11,5 @@ export interface ISoloRepository{
         transm_solo
     }:ISolos):Promise<ISolos>,
     show():Promise<Array<ISolos>>,
-    findById(id:string):Promise<ISolos>
+    findById(id:number):Promise<ISolos>
 }

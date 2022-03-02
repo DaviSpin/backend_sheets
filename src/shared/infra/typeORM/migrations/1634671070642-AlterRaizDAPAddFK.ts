@@ -5,8 +5,8 @@ export class AlterRaizDAPAddFK1634671070642 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn('raizDAP',new TableColumn({
             name:'id_cultivar',
-            type:'binary',
-            width:16
+            type:'integer',
+            // width:16
         }))
         await queryRunner.createForeignKey('raizDAP',new TableForeignKey({
             name:'FkCultivarRaizDAP',

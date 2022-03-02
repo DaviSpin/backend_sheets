@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import createSolo from '../modules/Solos/UseCase/createSolo'
+import createSolo from '../../../../modules/Solos/UseCase/createSolo'
+import listSolos from '../../../../modules/Solos/UseCase/listSolos'
 
 const solo=Router()
 
@@ -9,9 +10,9 @@ solo.post('/solos',(req,res)=>{
 // solo.put('/solos',(req,res)=>{
 //     return updateSolo().handle(req,res)
 // })
-// solo.get('/solos',(req,res)=>{
-//     return getSolos().handle(req,res)
-// })
+solo.get('/solos',(req,res)=>{
+    return listSolos().handle(req,res)
+})
 // solo.get('/solos/:id',(req,res)=>{
 //     return getSolo().handle(req,res)
 // })

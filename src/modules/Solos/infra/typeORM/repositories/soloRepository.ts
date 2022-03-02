@@ -44,7 +44,7 @@ export class SoloRepository implements ISoloRepository {
         const solos=await this.repository.find()
         return solos
     }
-    async findById(id: string): Promise<ISolos> {
+    async findById(id: number): Promise<ISolos> {
         const solo=await this.repository.findOne(id)
         return solo
     }

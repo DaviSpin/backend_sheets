@@ -2,8 +2,8 @@ import { IListSolosUseCase } from './../../Protocols/UseCase/IListSolosUseCase';
 import { ISolos } from './../../Protocols/ISolos';
 import { ISoloRepository } from './../../Protocols/ISoloRepository';
 export class ListSolosUseCase implements IListSolosUseCase{
-    constructor(private SoloRepository:ISoloRepository){}
+    constructor(private soloRepository:ISoloRepository){}
     async execute():Promise<ISolos[]>{
-        return await this.SoloRepository.show()
+        return await this.soloRepository.show()
     }
 }

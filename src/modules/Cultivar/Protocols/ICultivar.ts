@@ -1,5 +1,5 @@
 export interface ICultivar{
-    id?:string,
+    id?:number,
     nome:string,
     condutividade:number,
     disp_irrigar:number,

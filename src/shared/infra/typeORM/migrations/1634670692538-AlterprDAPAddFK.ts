@@ -5,8 +5,8 @@ export class AlterprDAPAddFK1634670692538 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.addColumn('prDAP',new TableColumn({
             name:'id_cultivar',
-            type:'binary',
-            width:16
+            type:'integer',
+            // width:16
         }))
         await queryRunner.createForeignKey('prDAP',new TableForeignKey({
             name:'FkCultivarPrDAP',

@@ -3,12 +3,12 @@ import { Solos } from '../../../../Solos/infra/typeORM/entities/solo';
 import { Cultivar } from '../../../../Cultivar/infra/typeORM/entities/cultivar';
 import { IParcelas } from "modules/Parcelas/Protocols/IParcelas";
 
-import { Column, CreateDateColumn, Entity,JoinColumn,ManyToOne,PrimaryColumn, UpdateDateColumn } from "typeorm";
-import {v4 as uuid4} from 'uuid'
+import { Column, CreateDateColumn, Entity,JoinColumn,ManyToOne, PrimaryGeneratedColumn, UpdateDateColumn } from "typeorm";
+// import {v4 as uuid4} from 'uuid'
 @Entity('parcelas')
 export class Parcela implements IParcelas{
-    @PrimaryColumn ({type:'binary',width:16})
-    id?: string;
+    @PrimaryGeneratedColumn({type:'integer'})
+    id?: number;
     @Column({nullable:false})
     nome: string;
     @Column({nullable:true})
@@ -53,11 +53,11 @@ export class Parcela implements IParcelas{
     updated_at?:Date
     
     @Column()
-    id_cultivar?: string;
+    id_cultivar?: number;
     @Column()
-    id_solo?: string;
+    id_solo?: number;
     @Column()
-    id_reservatorio?: string;
+    id_reservatorio?: number;
 
     @ManyToOne(type=>Cultivar)
     @JoinColumn({name:"id_cultivar"})
@@ -70,12 +70,5 @@ export class Parcela implements IParcelas{
     @ManyToOne(type=>Reservatorio)
     @JoinColumn({name:"id_reservatorio"})
     reservatorio:Reservatorio
-
-    constructor(){
-        if(!this.id){
-            this.id=uuid4()
-        }
-    }
-
 
 }

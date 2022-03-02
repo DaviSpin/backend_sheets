@@ -10,7 +10,7 @@ export class CreateSolosUseCase implements ICreateSoloUseCase {
         ponto_murcha,
         densidade_ap,
         disp_total }: ISolos): Promise<ISolos> {
-        const solos = await this.soloRepository.create({
+        const solo = await this.soloRepository.create({
             id,
             tipo,
             transm_solo,
@@ -19,6 +19,6 @@ export class CreateSolosUseCase implements ICreateSoloUseCase {
             densidade_ap,
             disp_total
         })
-        return solos
+        return solo
     }
 }
