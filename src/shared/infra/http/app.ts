@@ -1,7 +1,6 @@
 import express,{ NextFunction, Request, Response } from 'express'
 import { parcela } from './routes/Parcelas.routes'
 import {solo} from './routes/SolosUseCase.routes'
-
 import CreateConnection from '../typeORM'
 
 import 'express-async-errors'
@@ -9,7 +8,8 @@ import { AppErrors } from '../../errors/AppErrors'
 
 const app = express()
 
-CreateConnection().then(db=>console.log(`Conectado ao banco ${db.driver.database}`))
+// CreateConnection().then(db=>console.log(`Conectado ao banco ${db.driver.database}`))
+
 
 app.use(express.json())
 app.use(parcela)
