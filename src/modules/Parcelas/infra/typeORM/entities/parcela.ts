@@ -14,7 +14,7 @@ export class Parcela implements IParcelas{
     @Column({nullable:true})
     area: number;
     @Column({nullable:false})
-    data_transplantio: Date;
+    data_transplantio: string;
     @Column({nullable:true})
     esp_linhas: number;
     @Column({nullable:true})

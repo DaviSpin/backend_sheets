@@ -14,4 +14,5 @@ parcela.get('/parcelas/:id',(req,resp)=>{
     return resp.status(200).json({name:'test'})
 })
 
+
 export {parcela}

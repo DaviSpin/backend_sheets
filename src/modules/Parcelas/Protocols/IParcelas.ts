@@ -5,7 +5,7 @@ export interface IParcelas{
     id?:number,
     nome:string,
     area:number,
-    data_transplantio:Date,
+    data_transplantio:string,
     esp_linhas:number,
     esp_emissores:number,
     vazao:number,

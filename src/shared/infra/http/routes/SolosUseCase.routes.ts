@@ -5,7 +5,8 @@ import listSolos from '../../../../modules/Solos/UseCase/listSolos'
 const solo=Router()
 
 solo.post('/solos',(req,res)=>{
-    return createSolo().handle(req,res)
+    console.log('SHEET ',req)
+    // return createSolo().handle(req,res)
 })
 // solo.put('/solos',(req,res)=>{
 //     return updateSolo().handle(req,res)
